@@ -94,6 +94,8 @@ export const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
 
       if (res.error) {
         setErrors({ general: res.error.message });
+      } else if (res.successMessage) {
+        setSuccessMsg(res.successMessage);
       } else {
         const dest = sessionStorage.getItem('promptcraft_redirect_to') || '/prompt-builder';
         sessionStorage.removeItem('promptcraft_redirect_to');
@@ -113,6 +115,8 @@ export const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
       setIsSubmitting(false);
       if (res.error) {
         setErrors({ general: res.error.message });
+      } else if (res.successMessage) {
+        setSuccessMsg(res.successMessage);
       } else {
         const dest = sessionStorage.getItem('promptcraft_redirect_to') || '/prompt-builder';
         sessionStorage.removeItem('promptcraft_redirect_to');
