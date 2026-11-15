@@ -1,0 +1,8 @@
+{
+  "name": "PromptCraft AI",
+  "description": "AI-powered prompt engineering workspace to build, analyze images into prompts, and refine creative instructions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

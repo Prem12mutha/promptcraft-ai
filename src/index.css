@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFF8E9;
+  --foreground: #25283D;
+  --muted: #F3ECE0;
+  --muted-foreground: #788493;
+  --border: #E8DECC;
+  --input: #E8DECC;
+  --primary: #25283D;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFD078;
+  --secondary-foreground: #25283D;
+  --accent: #FFE8D0;
+  --accent-foreground: #25283D;
+  --destructive: #F4774F;
+  --destructive-foreground: #FFFFFF;
+  --ring: #37B8E8;
+}
+
+.dark, [data-theme='dark'] {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --border: #27272a;
+  --input: #27272a;
+  --primary: #fafafa;
+  --primary-foreground: #18181b;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fafafa;
+  --ring: #3f3f46;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-ring: var(--ring);
+
+  --color-butter-yellow: #FFD078;
+  --color-mint-green: #CFF0E5;
+  --color-coral-orange: #F4774F;
+  --color-warm-ivory: #FFF8E9;
+  --color-midnight-navy: #25283D;
+  --color-soft-violet: #8B7BE8;
+  --color-turquoise: #55CFC0;
+  --color-pale-peach: #FFE8D0;
+
+  --font-display: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #FFF8E9;
+  color: #25283D;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Fredoka', 'Nunito', system-ui, sans-serif;
+}
+
+/* Custom sketch doodle stroke styling */
+.doodle-stroke {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Tasteful subtle animations with reduced-motion support */
+@keyframes subtle-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes gentle-float-alt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+@keyframes dash-march {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes soft-sparkle {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15) rotate(4deg); }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+.animate-gentle-float-alt {
+  animation: gentle-float-alt 5s ease-in-out infinite 0.5s;
+}
+
+.animate-dash-march {
+  animation: dash-march 2s linear infinite;
+}
+
+.animate-soft-sparkle {
+  animation: soft-sparkle 3s ease-in-out infinite;
+}
+
+.hover-wiggle:hover {
+  animation: subtle-wiggle 0.3s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gentle-float,
+  .animate-gentle-float-alt,
+  .animate-dash-march,
+  .animate-soft-sparkle,
+  .hover-wiggle:hover {
+    animation: none !important;
+    transform: none !important;
+  }
+}
